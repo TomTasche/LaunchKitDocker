@@ -40,7 +40,7 @@ module.exports = Controller.create(Dashboard, {
 
   // PRIVATE
 
-  enableLoggedOut: false,
+  enableLoggedOut: true,
   preferSignupNotLogin: true,
 
   __title__: function() {

@@ -213,8 +213,6 @@ def website_view(request, website_id):
     return _website_view_GET(request, website_id)
 
   else:
-    if not request.user.is_authenticated():
-      return unauthorized_request()
     return _website_view_POST(request, website_id)
 
 

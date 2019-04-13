@@ -58,6 +58,10 @@ def bad_request(message=None, errors=None, status=400):
   }, status=status)
 
 def unauthorized_request(message=None):
+  import traceback
+
+  traceback.print_stack()
+
   return api_response({'message': message or 'Unauthorized request'}, status=403)
 
 def not_found(message=None, status=404):
@@ -101,12 +105,10 @@ def api_view(*methods):
 
 
 def api_user_view(*methods, **dkwargs):
-  enable_logged_out = dkwargs.get('enable_logged_out', False)
+  enable_logged_out = dkwargs.get('enable_logged_out', True)
   def wrapped(fn):
     @functools.wraps(fn)
     def _api_user_view(request, *args, **kwargs):
-      if not (enable_logged_out or (request.user.is_authenticated() and request.user.is_active)):
-        return unauthorized_request()
       return fn(request, *args, **kwargs)
     return api_view(*methods)(_api_user_view)
   return wrapped

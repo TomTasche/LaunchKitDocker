@@ -26,7 +26,7 @@ var Dashboard = library.controllers.Dashboard;
 
 
 module.exports = Controller.create(Dashboard, {
-  enableLoggedOut: false,
+  enableLoggedOut: true,
   preferSignupNotLogin: true,
 
   __preload__: function(done) {

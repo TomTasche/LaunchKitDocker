@@ -27,7 +27,7 @@ var Base = library.controllers.Base;
 
 module.exports = Controller.create(Base, {
   // Overrideable by children.
-  enableLoggedOut: false,
+  enableLoggedOut: true,
 
   redirectToLogin: function() {
     var loginOrSignup = this.preferSignupNotLogin ? '/signup/' : '/login/';

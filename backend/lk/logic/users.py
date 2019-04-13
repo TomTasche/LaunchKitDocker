@@ -112,7 +112,7 @@ def create_user(first_name, last_name, email=None, verified_email=False, passwor
       user.delete()
       return None
 
-  send_welcome_email.apply_async(args=[user.id], countdown=60.0)
+  #send_welcome_email.apply_async(args=[user.id], countdown=60.0)
 
   return user
 

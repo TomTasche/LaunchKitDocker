@@ -156,11 +156,6 @@ module.exports = Controller.create(Dashboard, {
   handleAction: function(action, $target) {
     switch(action) {
       case 'choose':
-        if (!this.user) {
-          this.redirectToLogin();
-          return;
-        }
-
         if (this.choosing) {
           return;
         }

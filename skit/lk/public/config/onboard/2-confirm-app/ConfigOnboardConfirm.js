@@ -31,7 +31,7 @@ var html = __module__.html;
 
 
 module.exports = Controller.create(Dashboard, {
-  enableLoggedOut: false,
+  enableLoggedOut: true,
   preferSignupNotLogin: true,
 
   floatingBoxClass: 'huge-box',
